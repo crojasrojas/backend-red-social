@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+      "module": "CommonJS",                       /* permite dejar la definicion de interpretacion/transpilacion de ts a js */
+      "target": "ES2015",                         /* permite definir la estandarización a ocupar del ECMAScript para vincularlo a un node de ejecución de node */
+      "lib": ["DOM", "ES2015"],                   /* permite definir el ECMAScript con sus reglas para resolver tu ts */
+      "esModuleInterop": true,                    /* permite verificar el codigo de ts a js y aplicar transformaciones para dar soporte a js */
+      "resolveJsonModule": true,                  /* permite dar soporte a importaciones de archivos .json */
+      "moduleResolution": "node",                 /* permite interpretar al 100% la libreria ts y su compatibilidad con node */
+      "noImplicitAny": true,                      /* permite verificar los typo any en el proceso de compilacion del ts */
+      "sourceMap": true,                          /*  */
+      "experimentalDecorators": true,             /* permite dar soporte a decoradores */
+      "emitDecoratorMetadata": true,              /* permite dar soporte y seguimientos a decoradores en tiempo de ejecucion */
+      "strict": true,                             /* permite monitorear un set de reglas recomendadas para ts */
+      "baseUrl": "./",                            /* permite definir donde queda el codigo transpilado, en este caso siempre se deja en la raíz */
+      "outDir": "./cache",                        /*  */
+      "forceConsistentCasingInFileNames": true,   /* verificar mis importaciones y asegurarse de que se resuelvan en el caso de que esten bien */
+      "noUnusedLocals": false,                    /* permite definir un error de compilación si detecta propiedades sin ocupar */
+      "noUnusedParameters": true,                 /* permite definir un error de compilación si detecta argumentos sin ocupar en un método o función */
+      "pretty": true,                             /* permite definir un formateador para los errores que ocurren en el proceso de compilación, para identiicarlos mas sencillamente */
+
+      "removeComments": false,                    /* Strips all comments from TypeScript files when converting into JavaScript */
+      "allowSyntheticDefaultImports": true,       /* Allow default imports from modules with no default export */
+      "incremental": true,                        /* Enable incremental compilation by reading/writing information from prior compilations to a file on disk */
+
+      "plugins": [
+        { "transform": "type-transform-paths" },
+        { "transform": "type-transform-paths", "afterDeclarations": true}
+      ],
+      "paths": {
+        "@bootstrap/*": ["src/bootstrap/*"],
+        "@configs/*": ["src/configs/*"],
+        "@auth/*":["src/features/auth/*"],
+        "@user/*":["src/features/user/*"],
+        "@interfaces/*": ["src/interfaces/*"],
+        "@decorators/*": ["src/shared/decorators/*"],
+        "@errors/*": ["src/shared/errors/*"],
+        "@generators/*": ["src/shared/generators/*"],
+        "@services/*":["src/shared/services/*"]        
+      }
+  },
+  "include": ["src/**/*.ts"],                     /* permite definir lo que forma parte de la compilación y transpilación */
+  "exclude": [
+    "node_modules"
+    ]                                             /* permite definir los directorios que se deben excluir como parte de la compilación y transpilación */
+}

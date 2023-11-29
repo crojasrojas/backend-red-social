@@ -1,0 +1,21 @@
+{
+    "watch": ["src/"],
+    "ext": "ts, json",
+    "ignore": [
+        "git",
+        "node_modules"
+    ],
+    "execMap": {
+        "ts": "ts-node"
+    },
+    "events":{
+        "restart": "yarn run lint:check"
+    },
+    "env":{
+        "NODE_ENV": "development"
+    },
+    "verbose": true,
+    "restartable": "rs",
+    
+    "delay": 2500
+}
